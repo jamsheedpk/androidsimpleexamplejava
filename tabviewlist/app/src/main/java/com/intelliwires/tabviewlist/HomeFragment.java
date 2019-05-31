@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                 if (validateuname() && validateemail() && validatephone() && validatephone() && validateaddress()) {
 
-                    sqlitedb.execSQL("Insert Into Registration(empname,dob,email,phone,address)VALUES('" + name + "','" + dob + "','" + email + "','" + phone + "','" + address + "')");
+                    sqlitedb.execSQL("Insert Into Registration(empname,email,phone,address)VALUES('" + name + "','" + email + "','" + phone + "','" + address + "')");
                     Toast.makeText(getActivity(),"Successfully inserted",Toast.LENGTH_LONG).show();
                 }
 
@@ -154,19 +154,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.save) {
 
-            if (validateuname() && validateemail() && validatephone() && validatephone() && validateaddress()) {
+    }
 
-                sqlitedb.execSQL("Insert Into Registration(empname,dob,email,phone,address)VALUES('" + name + "','" + dob + "','" + email + "','" + phone + "','" + address + "')");
-               //  Toast.makeText(this, "Successfully inserted", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-    public void onClickSavebutton(View v) {
-        System.out.println("Click onClickSavebutton");
-        //Toast.makeText(this, "message" , Toast.LENGTH_LONG).show();
-    }
 //    public void onClickDate(View v) {
 //        System.out.println("Click here");
 //        Toast.makeText(getActivity(), "message" , Toast.LENGTH_LONG).show();
